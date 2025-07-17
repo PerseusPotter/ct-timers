@@ -86,7 +86,7 @@ function addToQueue(id, timeout, remove) {
 
 /**
  * @template T
- * @param {(...args: T) => void} func
+ * @param {(...args: T[]) => void} func
  * @param {number} [timeout]
  * @param {...T} args
  */
@@ -103,7 +103,7 @@ export function clearTimeout(id) {
 }
 /**
  * @template T
- * @param {(...args: T) => void} func
+ * @param {(...args: T[]) => void} func
  * @param {...T} args
  */
 export function setImmediate(func, ...args) {
@@ -121,7 +121,7 @@ export function clearImmediate(id) {
  *
  * i was too lazy to change my implementation to do that, as well as build a detection for however many calls for that function are queued up, as well as impose a limit on the maximum number of queued calls. deal with it who tf uses `setInterval` anyway use `register('step', () => {})`
  * @template T
- * @param {(...args: T) => void} func
+ * @param {(...args: T[]) => void} func
  * @param {number} [interval]
  * @param {...T} args
  */
