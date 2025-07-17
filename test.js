@@ -106,7 +106,7 @@ import { setTimeout, setInterval, setImmediate, clearTimeout, clearInterval, cle
     }, 99, "baz");
   })();
 
-  // --- Test TIME_MARGIN: Immediate runs before timeout ---
+  // --- Test 10: Immediate runs before timeout ---
   (function() {
     var id1 = nextId();
     var id2 = nextId();
