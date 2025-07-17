@@ -95,6 +95,7 @@ export default function createTimer() {
       setTimeout(func, timeout = 0, ...args) {
         return scheduleCall(func.bind(this, ...lmaoFuckRhino(args)), timeout + 0.9999, getNextFuncId(), true);
       },
+      /** @param {number} id */
       clearTimeout(id) {
         funcMapLock.lock();
         try {
@@ -111,6 +112,7 @@ export default function createTimer() {
       setImmediate(func, ...args) {
         return scheduleCall(func.bind(this, ...lmaoFuckRhino(args)), 0, getNextFuncId(), true);
       },
+      /** @param {number} id */
       clearImmediate(id) {
         funcMapLock.lock();
         try {
@@ -143,6 +145,7 @@ export default function createTimer() {
           addToQueue(id, interval, false);
         }, interval, id, false);
       },
+      /** @param {number} id */
       clearInterval(id) {
         funcMapLock.lock();
         try {
