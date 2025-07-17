@@ -1,6 +1,6 @@
 // chat gippity
 
-import { setTimeout, setInterval, setImmediate, clearTimeout, clearInterval, clearImmediate } from './index';
+import { setTimeout, setInterval, setImmediate, clearTimeout, clearInterval, clearImmediate } from './dedicatedThread';
 
 (function() {
   var testCounter = 0;
