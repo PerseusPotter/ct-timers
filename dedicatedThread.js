@@ -27,12 +27,18 @@ function registerCall(future, id) {
   return id;
 }
 const wrap = (func, id) => () => {
-  func();
-  futureMapLock.lock();
   try {
-    futureMap.delete(id);
+    func();
+  } catch (e) {
+    console.error(e.message);
+    console.error(e.stack);
   } finally {
-    futureMapLock.unlock();
+    futureMapLock.lock();
+    try {
+      futureMap.delete(id);
+    } finally {
+      futureMapLock.unlock();
+    }
   }
 };
 
